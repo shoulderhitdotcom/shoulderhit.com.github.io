@@ -1,6 +1,3 @@
-# shoulderhit.com.github.io
-The website
-
 # Good references
 
 http://jekyllrb.com/docs/structure/
