@@ -7,3 +7,6 @@ title: shoulderhit.com
 description: All your pro Go/Baduk/Weiqi needs
 
 show_downloads: "false"
+
+github:
+  is_project_page: "false"
