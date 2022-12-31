@@ -10,6 +10,7 @@ Welcome to shoulderhit.com where we will bring you the latest and greatest in th
   {% for post in site.posts %}
     <li>
       <a href="{{ post.url }}">{{ post.title }}</a>
+      {{ post.excerpt }}
     </li>
   {% endfor %}
 </ul>
