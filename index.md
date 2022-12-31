@@ -8,8 +8,8 @@ Welcome to shoulderhit.com where we will bring you the latest and greatest in th
 
 
 {% for post in site.posts %}
-    ## [{{ post.title }}]({{ post.url }})
+## [{{ post.title }}]({{ post.url }})
 
-    >  {{ post.excerpt }}
+>  {{ post.excerpt }}
 {% endfor %}
 
