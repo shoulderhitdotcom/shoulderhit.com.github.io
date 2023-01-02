@@ -9,9 +9,11 @@ Welcome to shoulderhit.com where we will bring you the latest and greatest in th
 
 {% for post in site.posts %}
 <div class="p.groove">
+
 ## [{{ post.title }}]({{ post.url }})
 
 >  {{ post.excerpt }}
+
 </div>
 {% endfor %}
 
