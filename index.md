@@ -8,10 +8,10 @@ Welcome to shoulderhit.com where we will bring you the latest and greatest in th
 
 
 {% for post in site.posts %}
-<div>
+<article>
 <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
 <blockquote>
 {{ post.excerpt | markdownify }}
 </blockquote>
-</div>
+</article>
 {% endfor %}
