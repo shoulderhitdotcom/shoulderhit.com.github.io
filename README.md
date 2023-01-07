@@ -15,3 +15,5 @@ https://stackoverflow.com/questions/32791318/how-do-i-put-html-js-and-css-in-a-g
 https://github.com/pages-themes/slate
 
 https://github.com/pages-themes/slate/blob/master/_layouts/default.html
+
+https://www.w3schools.com/howto/howto_css_image_text.asp
