@@ -128,8 +128,4 @@ for (chinese_title, url) in zip(new_stories["titles"], new_stories["urls"]):
     print("submitting now:")
     reddit.submit_gallery_by_folder(title, pic_path)
 
-new_stories = new_stories.to_pandas()
-
-new_stories["english_tiles"] = english_titles
-
-pl.from_pandas(new_stories).write_parquet("todays-news.parquet")
+new_stories.with_columns(pl.Series(english_titles).alias("english_titles")).write_parquet("todays-news.parquet")
