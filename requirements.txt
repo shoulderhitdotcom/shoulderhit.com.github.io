@@ -1,6 +1,6 @@
 appdirs==1.4.3
 autopep8==2.0.2
-beautifulsoup4==4.11.2
+beautifulsoup4==4.12.0
 CacheControl==0.12.6
 cachetools==5.3.0
 certifi==2019.11.28
@@ -16,7 +16,7 @@ google-cloud-bigquery==3.7.0
 google-cloud-core==2.3.2
 google-crc32c==1.5.0
 google-resumable-media==2.4.1
-googleapis-common-protos==1.58.0
+googleapis-common-protos==1.59.0
 grpcio==1.51.3
 grpcio-status==1.51.3
 html5lib==1.0.1

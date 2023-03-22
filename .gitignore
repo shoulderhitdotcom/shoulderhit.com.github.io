@@ -2,3 +2,4 @@
 *.parquet
 *.peg
 *.jpg
+__pycache__/

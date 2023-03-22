@@ -89,6 +89,8 @@ new_stories = df.filter(pl.col("date") >= latest_date).join(
 
 """Extract pis from the url"""
 def extract_pics(url, verbose=False):
+    print(FOXWQ_URL + url)
+
     page = requests.get(FOXWQ_URL + url)
     if page.status_code != 200:
         print("Error: ", page.status_code)
@@ -112,9 +114,8 @@ def extract_pics(url, verbose=False):
     return output_dir
 
 
-url = new_stories["urls"][0]
-
-chinese_title = new_stories["titles"][0]
+# url = new_stories["urls"][0]
+# chinese_title = new_stories["titles"][0]
 english_titles = []
 
 for (chinese_title, url) in zip(new_stories["titles"], new_stories["urls"]):
