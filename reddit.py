@@ -37,4 +37,14 @@ def submit_gallery_by_folder(title, path):
     upload_files = [f for f in os.listdir(
         path) if os.path.splitext(f)[1] == ".peg"]
     image_paths = [os.path.join(path, f) for f in upload_files]
-    submit_gallery(title, image_paths)
+    if len(image_paths) <= 20:
+        submit_gallery(title, image_paths)
+    else:
+        depth = 1
+        for i in range(0, len(image_paths), 20):
+            submit_gallery(title + f" {depth}", image_paths[i:(i+20)])
+            depth += 1
+        # print("The # of pics is larger than 20, splitting into two galleries"")
+        # submit_gallery(title, image_paths[0:20])
+        # l = len(image_paths)
+        # submit_gallery_by_folder(title + f" {depth}", image_paths[20:l], depth+1)

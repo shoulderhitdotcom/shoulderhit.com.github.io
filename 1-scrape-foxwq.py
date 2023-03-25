@@ -89,8 +89,6 @@ new_stories = df.filter(pl.col("date") >= latest_date).join(
 
 """Extract pis from the url"""
 def extract_pics(url, verbose=False):
-    print(FOXWQ_URL + url)
-
     page = requests.get(FOXWQ_URL + url)
     if page.status_code != 200:
         print("Error: ", page.status_code)
@@ -119,13 +117,22 @@ def extract_pics(url, verbose=False):
 english_titles = []
 
 for (chinese_title, url) in zip(new_stories["titles"], new_stories["urls"]):
-    print(f"Downloding pics from {url}")
+    download_this = input(f"Should I download this one (y/n): {chinese_title}")
+    if download_this == "n":
+        english_titles.append("")
+        continue
+
+    print(f"Downloding pics from {FOXWQ_URL + url}")
     pic_path = extract_pics(url)
     print(pic_path)
     title = input(f"Translate this into English\n{chinese_title}\n")
     english_titles.append(title)
+    if title == "":
+        print("skipped")
+        print("")
+        continue
 
     print("submitting now:")
     reddit.submit_gallery_by_folder(title, pic_path)
 
-new_stories.with_columns(pl.Series(english_titles).alias("english_titles")).write_parquet("todays-news.parquet")
+new_stories.with_columns(pl.Series(english_titles).alias("english_title")).write_parquet("todays-news.parquet")
